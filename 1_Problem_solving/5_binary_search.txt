@@ -1,0 +1,3 @@
+To prevent INT overflow we should write 
+
+mid = start + (end - start)/2;

@@ -1,0 +1,5 @@
+we can use previous question 
+
+we have to return 
+last_occurrence - First_occurnce + 1;
+  
