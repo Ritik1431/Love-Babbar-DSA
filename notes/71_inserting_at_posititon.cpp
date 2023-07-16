@@ -96,6 +96,48 @@ void printll(Node * head)
     cout<<head->data<<" ";
     printll(head->next);
 }
+int search(Node * head,int element)
+{
+    
+    int pos = 1;
+    Node * curr = head;
+    while(curr!=NULL)
+    {
+        if(curr->data == element)
+        {
+            return pos;
+        }
+        else
+        {
+            curr = curr->next;
+            pos++;
+        }
+    }
+    return -1;
+}
+int search_recurrsion(Node * head, int element)
+{
+    if(head==NULL)
+    {
+        return -1;
+    }
+    if(head->data == element)
+    {
+        return 1;
+    }
+    else
+    {
+        int res = search_recurrsion(head->next,element);
+        if(res==-1)
+        {
+            return -1;
+        }
+        else
+        {
+            return (res + 1);
+        }
+    }
+}
 int main()
 {
     Node * head = NULL;
@@ -105,7 +147,11 @@ int main()
     // printll(head);
     // head = insertAtPos(head,15,4);
     // head = deleteFirstElement(head);
-    head = deleteLastElement(head);
-    printll(head);
+    // head = deleteLastElement(head);
+    // cout<<search(head,20)<<endl;
+    cout<<search_recurrsion(head,20)<<endl;
+
+
+    // printll(head);
     return 0;
 }
